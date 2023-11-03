@@ -71,8 +71,11 @@ services:
         condition: service_healthy
       kafka-2:
         condition: service_healthy
+    volumes:
+      - ./config.yaml:/config.yaml        
     deploy:
       mode: replicated
       replicas: 2
     environment:
       BOOTSTRAP_SERVERS: kafka-1:29092,kafka-2:29092
+      CONFIGURATION_FILE: /config.yaml

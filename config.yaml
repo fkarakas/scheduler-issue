@@ -1,0 +1,2 @@
+kafka.producer.configuration:
+  partitioner: murmur2_random

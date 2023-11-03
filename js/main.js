@@ -8,7 +8,9 @@ const kafka = new Kafka({
   brokers: ['localhost:9092', 'localhost:9093'],
 });
 
-const producer = kafka.producer({ createPartitioner: Partitioners.LegacyPartitioner })
+//const producer = kafka.producer({ createPartitioner: Partitioners.LegacyPartitioner })
+
+const producer = kafka.producer()
 
 const uniqId = uuidv4();
 
